@@ -1,0 +1,104 @@
+
+
+service:
+  fix: false
+
+linters:
+  enable:
+    - errcheck
+    - gosimple
+    - govet
+    - ineffassign
+    - staticcheck
+    - unused
+    - revive
+    - gocritic
+    - bodyclose
+    - contextcheck
+    - dupl
+    - goconst
+    - gocyclo
+    - gosec
+    - misspell
+    - nestif
+    - prealloc
+    - predeclared
+    - exportloopref
+    - asciicheck
+    - dogsled
+    - durationcheck
+    - errorlint
+    - exhaustive
+    - forbidigo
+    - gomoddirectives
+    - goprintffuncname
+    - rowserrcheck
+    - sqlclosecheck
+    - tenv
+    - wastedassign
+    - whitespace
+
+  disable:
+    - deadcode
+    - varcheck
+    - structcheck
+    - interfacer
+    - maligned
+    - scopelint
+    - ifshort
+
+  settings:
+    gocyclo:
+      min-complexity: 15
+    dupl:
+      threshold: 100
+    goconst:
+      min-len: 2
+      min-occurrences: 3
+    gocritic:
+      enabled-tags:
+        - performance
+        - style
+        - experimental
+      disabled-checks:
+        - hugeParam
+
+linters-settings:
+  revive:
+    rules:
+      - name: exported
+        disabled: false
+      - name: var-naming
+        disabled: false
+  gosec:
+    excludes:
+      - G101 
+      - G104 
+      - G204
+
+issues:
+  exclude-rules:
+    - path: _test\.go
+      linters:
+        - gocyclo
+        - dupl
+        - gosec
+        - funlen
+    - linters:
+        - typecheck
+      text: "undefined:"
+
+  max-issues-per-linter: 0
+  max-same-issues: 0
+
+run:
+  deadline: 5m
+  
+  skip-dirs:
+    - vendor
+    - third_party
+    - testdata
+    - api
+    - .git
+
+  modules-download-mode: vendor
