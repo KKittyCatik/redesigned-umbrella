@@ -36,7 +36,7 @@ func Load(logger *slog.Logger) *Config {
 		Host:            getEnvWithDefault("DB_HOST", "localhost"),
 		Port:            getEnvWithDefault("DB_PORT", "5432"),
 		User:            getEnvWithDefault("DB_USER", "postgres"),
-		Password:        getEnvWithDefault("DB_PASSWORD", "postgres"),
+		Password:        getEnvWithDefault("DB_PASSWORD", "postgres123"),
 		DBName:          getEnvWithDefault("DB_NAME", "pr_reviewer"),
 		SSLMode:         getEnvWithDefault("DB_SSL_MODE", "disable"),
 		MigrationsPath:  getEnvWithDefault("MIGRATIONS_PATH", "./migrations"),
