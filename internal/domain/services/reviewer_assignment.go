@@ -31,9 +31,11 @@ func (s *ReviewerAssignmentService) SelectReviewers(team *entities.Team, authorI
 
 	perm := s.rnd.Perm(len(candidates))
 	limit := 2
+
 	if len(candidates) < limit {
 		limit = len(candidates)
 	}
+
 	result := make([]string, 0, limit)
 	for i := 0; i < limit; i++ {
 		result = append(result, candidates[perm[i]])
