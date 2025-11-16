@@ -32,13 +32,18 @@ docker run --name pr-reviewer-db -e POSTGRES_PASSWORD=password \
   -e POSTGRES_DB=reviewer_service -p 5432:5432 -d postgres:15
 ```
 
-### 4. Используйте команды MAkefile 
+### 4. Используйте команды Makefile 
 
 ```bash
 make build - сбильдить проект
 make run - запустить проект
 ```
+
 ### 5. Миграции
+
+```bash
+migrate -path ./migrations -database "postgres://postgres:password@localhost:5432/reviewer_service?sslmode=disable" up
+```
 
 ### 6. Запуск через docker
 
