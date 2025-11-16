@@ -73,3 +73,8 @@ Pull Requests
 |POST	|/pullRequest/create	|Создать PR и назначить ревьюверов|
 |POST	|/pullRequest/merge	|Пометить PR как MERGED|
 |POST	|/pullRequest/reassign	|Переназначить ревьювера|
+
+
+
+### Вопросы/Проблемы
+Я добавил генерацию user admin, чтобы была возможность получать jwt токен. Делать отдельную ручку для входа в сервис не стал(
